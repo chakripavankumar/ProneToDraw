@@ -1,18 +1,18 @@
+import { useDispatch,useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencil,faEraser,faRotateRight,faRotateLeft, faFileArrowDown}  from '@fortawesome/free-solid-svg-icons'
 import styles from './index.module.css' 
- import cx from 'classnames'
-import { useDispatch,useSelector } from 'react-redux'
+import cx from 'classnames';
 import { menuItemClick,actionMenuItem } from '@/slice/menuSlice'
-import { MENU_ITEMS } from '@/constant'
+import { MENU_ITEMS } from '@/constant';
 const Menu = () => {
     const dispatch = useDispatch()
     const activeMenuItem = useSelector((state) => state.menu.activeMenuItem)
     
     const handleMenuClick = (itemName) => {
-        dispatch(menuItemClick(itemName))
-        
+        dispatch(menuItemClick(itemName))   
     }
+    
     return (
         <div className={styles.menuContainer}>
             <div className={cx(styles.iconWrapper, { [styles.active]: activeMenuItem === MENU_ITEMS.PENCIL })} onClick={()=> handleMenuClick(MENU_ITEMS.PENCIL)}>
