@@ -1,8 +1,10 @@
-// next.config.js
+const path = require('path');
+
 module.exports = {
   // Other configurations...
   webpack: (config) => {
-    config.resolve.alias['@'] = path.join(__dirname, '/');
+    // Use 'path' here as needed.
+    // ...
     return config;
   },
 };
