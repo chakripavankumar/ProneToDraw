@@ -5,7 +5,7 @@ import {  actionItemClick } from "@/slice/menuslice";
 import { socket } from "../../../socket";
 const Board = () => {
     const dispatch = useDispatch(); 
-        const canvasRef = useRef(null)
+    const canvasRef = useRef(null)
     const drawHistory = useRef([])
     const historyPointer= useRef(0)
     const shouldDraw = useRef(false)
@@ -25,13 +25,11 @@ const Board = () => {
             anchor.href = URL
             anchor.download = 'sketch.jpg'
             anchor.click()
-        }
-        else if (actionMenuItem === MENU_ITEMS.UNDO ||actionMenuItem=== MENU_ITEMS.REDO) {
+        }else if (actionMenuItem === MENU_ITEMS.UNDO ||actionMenuItem=== MENU_ITEMS.REDO) {
             if (historyPointer.current > 0 && actionMenuItem===MENU_ITEMS.UNDO) historyPointer.current -= 1 
              if(historyPointer.current < drawHistory.current.length -1  && actionMenuItem===MENU_ITEMS.REDO)  historyPointer.current +=1 
             const imageData = drawHistory.current[historyPointer.current]
-            context.putImageData(imageData, 0, 0)
-            
+            context.putImageData(imageData, 0, 0) 
         }
         dispatch(actionItemClick(null))        
     },[actionMenuItem,dispatch])
@@ -41,21 +39,22 @@ const Board = () => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d")
 
-        const changeConfig = (color,size) => {
-        context.strokeStyle = color
-         context.lineWidth = size
+         const changeConfig = (color, size) => {
+            context.strokeStyle = color
+            context.lineWidth = size
         }
-        const handleChangeConfig = (config) => { 
-            console.log("config" + config);
-            changeConfig(config.color,config.size)
+
+        const handleChangeConfig = (config) => {
+            console.log("config", config)
+            changeConfig(config.color, config.size)
         }
-        changeConfig( color,size)
+        changeConfig(color, size)
         socket.on('changeConfig', handleChangeConfig)
+
         return () => {
-            socket.off('changeConfig',handleChangeConfig)
+            socket.off('changeConfig', handleChangeConfig)
         }
-        
-    },[color,size])
+    }, [color, size])
     
     useLayoutEffect(() => { 
         //mount
