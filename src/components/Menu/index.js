@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useDispatch ,useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames'
 
 import {
@@ -11,7 +11,7 @@ import {
     faRotateRight
 } from '@fortawesome/free-solid-svg-icons'
 import styles from './index.module.css' 
-import { menuItemClick,actionItemClick } from '@/slice/menuslice'
+import { menuItemClick,actionItemClick } from '../../slice/menuslice'
 import { MENU_ITEMS } from '../../../constants'
 const Menu = () => {
     const dispatch = useDispatch()

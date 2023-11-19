@@ -1,7 +1,7 @@
 import styles from './index.module.css'
  import { COLORS, MENU_ITEMS } from '../../../constants'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeColor, changeBrushSize } from '@/slice/toolboxslice'
+import { changeColor, changeBrushSize } from '../../slice/toolboxslice';
 import { socket } from '../../../socket'
 
 import cx from 'classnames'

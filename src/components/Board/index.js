@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { MENU_ITEMS } from "../../../constants";
-import {  actionItemClick } from "@/slice/menuslice";
+import {  actionItemClick } from "../../slice/menuslice";
 import { socket } from "../../../socket";
 const Board = () => {
     const dispatch = useDispatch(); 
