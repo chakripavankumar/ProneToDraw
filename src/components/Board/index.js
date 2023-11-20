@@ -104,6 +104,10 @@ const Board = () => {
         canvas.addEventListener("mousemove", handleMouseMove)
         canvas.addEventListener("mouseup", handleMouseUp)
 
+        canvas.addEventListener("touchstart", handleMouseDown)
+        canvas.addEventListener("touchmove", handleMouseMove)
+        canvas.addEventListener("touchend", handleMouseUp)
+
         
 
         socket.on('beginPath', handleBeginPath)
@@ -114,6 +118,10 @@ const Board = () => {
         canvas.removeEventListener("mousedown", handleMouseDown)
         canvas.removeEventListener("mousemove", handleMouseMove)
         canvas.removeEventListener("mouseup", handleMouseUp)
+            
+        canvas.removeEventListener("touchstart", handleMouseDown)
+        canvas.removeEventListener("touchmove", handleMouseMove)
+        canvas.removeEventListener("touchend", handleMouseUp)
 
         socket.off('beginPath', handleBeginPath)
         socket.off('drawLine',handleDrawLine)
