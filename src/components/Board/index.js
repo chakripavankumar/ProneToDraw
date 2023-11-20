@@ -74,17 +74,17 @@ const Board = () => {
             context.lineTo(x, y)
             context.stroke()
         }
-        const handleMouseDown = (e) => {
+         const handleMouseDown = (e) => {
             shouldDraw.current = true
-            beginPath(e.clientX, e.clientY)
-            socket.emit('beginPath',{x: e.clientX, y: e.clientY})        
-    }
+            beginPath(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY)
+            socket.emit('beginPath', {x: e.clientX || e.touches[0].clientX, y: e.clientY || e.touches[0].clientY})
+        }
+
         const handleMouseMove = (e) => {
             if (!shouldDraw.current) return
             drawLine(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY)
-             socket.emit('drawLine',{x: e.clientX || e.touches[0].clientX, y: e.clientY || e.touches[0].clientY})  
-           }
-        
+            socket.emit('drawLine', {x: e.clientX || e.touches[0].clientX, y: e.clientY || e.touches[0].clientY})
+        }
      const handleMouseUp = (e) => {
          shouldDraw.current = false
          const imgData = context.getImageData(0, 0, canvas.width, canvas.height)
