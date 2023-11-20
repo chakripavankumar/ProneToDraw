@@ -26,7 +26,7 @@ const Toolbox = () => {
         //this div is main div i.e container
         <div className={styles.toolboxContainer}>
             {showStrokeToolOption &&  <div  className={styles.toolItem}>
-                <h3 className={styles.toolText}> Stroke </h3>
+                <h3 className={styles.toolText}> Stroke  Color</h3>
                 {/* this div is for colors */}
                 <div className={styles.itemContainer}>
                     <div className={cx(styles.colorBox,{[styles.active]:color===COLORS.BALCK})} style={{ backgroundColor: COLORS.BALCK }} onClick={()=> updateColor(COLORS.BALCK)} />
