@@ -13,7 +13,11 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+<<<<<<< HEAD
     colors: {
+=======
+     colors: {
+>>>>>>> a2c88c73e8bc1688a8a46b86fef05214c79356a1
       background1: 'rgba(255,255,255, 0.9)',
       shadow1: '0px 7px 14px rgba(0, 0, 0, .05), 0px 0px 3.12708px rgba(0, 0, 0, .0798), 0px 0px .931014px rgba(0, 0, 0, .1702)',
       shadow2: '0 0 0 1px #4a47b1',
@@ -22,6 +26,10 @@ module.exports = {
       text1: '#3d3d3d',
       text2: '#e3e2fe'
     }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> a2c88c73e8bc1688a8a46b86fef05214c79356a1
   },
   plugins: [],
 }

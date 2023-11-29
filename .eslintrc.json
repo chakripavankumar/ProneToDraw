@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
   "extends": ["next/babel","next/core-web-vitals"]
+=======
+  "extends": "next/core-web-vitals"
+>>>>>>> a2c88c73e8bc1688a8a46b86fef05214c79356a1
 }

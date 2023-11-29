@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .toolboxContainer{
     @apply p-5 absolute top-1/4 left-5 w-64 rounded-md;
     box-shadow: theme('colors.shadow1');
@@ -18,8 +19,47 @@
                         border : 1.5px solid theme('colors.border2');
                         box-shadow: theme('colors.shadow2');
                     }
+=======
+.toolboxContainer {
+    @apply p-4 absolute top-1/4 left-5 w-52 rounded-md;
+    box-shadow: theme('colors.shadow1');
+    border: 1px solid theme('colors.border1');
+    background-color: theme('colors.background1');
+
+    .toolItem {
+        @apply mb-5;
+
+        .toolText {
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 100;
+            color: theme('colors.text1');
+        }
+
+        .itemContainer {
+            @apply flex justify-between mt-1;
+
+            .colorBox {
+                @apply h-5 w-5 mr-1 rounded-sm cursor-pointer;
+
+                &:hover,
+                &.active {
+                    border: 1.5px solid theme('colors.border2');
+                    box-shadow: theme('colors.shadow2');
+>>>>>>> a2c88c73e8bc1688a8a46b86fef05214c79356a1
                 }
             }
         }
     }
 
+<<<<<<< HEAD
+=======
+
+ @media screen and (max-width: 640px) {
+     top: unset;
+     bottom: 0;
+     width: 100%;
+     left: 0;
+ }
+ }
+>>>>>>> a2c88c73e8bc1688a8a46b86fef05214c79356a1
